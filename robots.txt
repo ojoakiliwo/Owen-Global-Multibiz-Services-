@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ojoakiliwo.github.io/Owen-Global-Multibiz-Services-/sitemap.xml
