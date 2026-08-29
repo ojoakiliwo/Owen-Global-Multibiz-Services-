@@ -29,7 +29,7 @@ Paystack needs a **live public URL**, not only these files in GitHub.
 
 5. Paste that URL into the Website field on your Paystack compliance / international payments request.
 
-The first time someone uses the contact form, Formsubmit will send a confirmation email to `ojoakiliwo@gmail.com`. Open that email and confirm so messages can be delivered.
+The first time someone uses the contact form, Formsubmit will send a confirmation email to `owenglobalmultibiz@gmail.com`. Open that email and confirm so messages can be delivered.
 
 ### Option 2 — Custom domain (recommended later)
 
@@ -44,7 +44,7 @@ Edit `contact.html` (and the same lines on other pages if needed) to include:
 - Business telephone number
 - Social media links, if any
 
-The enquiry form currently emails **ojoakiliwo@gmail.com**.
+The enquiry form currently emails **owenglobalmultibiz@gmail.com**.
 
 ## Local preview
 
