@@ -26,7 +26,7 @@ jobs:
       - name: Prepare site files
         run: |
           mkdir -p _site
-          cp -r *.html css js assets robots.txt sitemap.xml .nojekyll _site/
+          cp -r *.html css js assets robots.txt sitemap.xml CNAME .nojekyll _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
