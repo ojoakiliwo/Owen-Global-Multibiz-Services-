@@ -2,6 +2,8 @@
 
 Public website for **Owen Global Multibiz Services**, a business name registered with the Corporate Affairs Commission (CAC) of Nigeria.
 
+Live site: [https://owenglobal.store](https://owenglobal.store)
+
 The site describes the company’s trade in wholesale, retail, supermarket operations, general goods supply, and agriculture. It includes the contact details and legal pages payment partners such as Paystack typically expect when reviewing a merchant for international payments.
 
 ## Pages
@@ -14,37 +16,49 @@ The site describes the company’s trade in wholesale, retail, supermarket opera
 - Terms of Service
 - Refund and Return Policy
 
-## Publish the site (required for Paystack)
+## Connect owenglobal.store (Namecheap + GitHub Pages)
 
-Paystack needs a **live public URL**, not only these files in GitHub.
+After this code is on the `main` branch, do both of the following. GitHub Pages hosting is free. Do not buy SSL or hosting from Namecheap.
 
-### Option 1 — GitHub Pages (free)
+### 1. GitHub — attach the domain
 
-1. Merge this project to the `main` branch.
-2. In the GitHub repository open **Settings → Pages**.
-3. Under **Build and deployment**, choose **GitHub Actions** (the workflow in `.github/workflows/pages.yml` publishes the site).
-4. After the workflow succeeds, the site is available at:
+1. Open the repository **Settings → Pages**.
+2. Under **Build and deployment**, set source to **GitHub Actions**.
+3. Under **Custom domain**, enter `owenglobal.store` and save.
+4. Wait until DNS check succeeds, then tick **Enforce HTTPS**. This can take from a few minutes up to 24 hours.
 
-   `https://ojoakiliwo.github.io/Owen-Global-Multibiz-Services-/`
+### 2. Namecheap — DNS records
 
-5. Paste that URL into the Website field on your Paystack compliance / international payments request.
+1. Sign in to [Namecheap](https://www.namecheap.com/).
+2. Go to **Domain List → Manage** next to `owenglobal.store`.
+3. Open the **Advanced DNS** tab.
+4. Delete any existing **A**, **CNAME**, or **URL Redirect** records for `@` or `www` (parking or Namecheap default pages will block the site).
+5. Add these records and save:
 
-The first time someone uses the contact form, Formsubmit will send a confirmation email to `owenglobalmultibiz@gmail.com`. Open that email and confirm so messages can be delivered.
+| Type | Host | Value | TTL |
+| --- | --- | --- | --- |
+| A Record | `@` | `185.199.108.153` | Automatic |
+| A Record | `@` | `185.199.109.153` | Automatic |
+| A Record | `@` | `185.199.110.153` | Automatic |
+| A Record | `@` | `185.199.111.153` | Automatic |
+| CNAME Record | `www` | `ojoakiliwo.github.io.` | Automatic |
 
-### Option 2 — Custom domain (recommended later)
+Use `ojoakiliwo.github.io.` for the www CNAME (your GitHub username, not the repository name). Include the trailing dot if Namecheap shows it.
 
-A domain such as `owenglobalmultibiz.com` looks more like a trading business than a `github.io` address. After you buy a domain, point it at GitHub Pages and add a `CNAME` file in this repository.
+When HTTPS is on, give Paystack this URL:
+
+`https://owenglobal.store`
+
+The first time someone uses the contact form, Formsubmit will email `owenglobalmultibiz@gmail.com`. Open that message and confirm so enquiries can arrive.
 
 ## Details to add when you have them
 
-Edit `contact.html` (and the same lines on other pages if needed) to include:
+Edit `contact.html` to include:
 
 - CAC registration / business-name number
 - Registered office address (Paystack usually wants this on the site)
 - Business telephone number
 - Social media links, if any
-
-The enquiry form currently emails **owenglobalmultibiz@gmail.com**.
 
 ## Local preview
 
